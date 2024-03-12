@@ -1,0 +1,506 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(255, 252, 232);
+    cursor: pointer;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23000' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/></svg>") 12 12, auto;
+}
+
+    button, a {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+button:hover, a:hover {
+    color: #ffae00;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='none'><circle cx='8' cy='8' r='6' fill='none'/></svg>") 8 8, auto;
+}
+
+button {
+    border: none;
+    padding: 10px 5px;
+    font-size: 20px;
+    position: relative;
+    background: transparent;
+    color:rgb(132, 110, 110);
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    transition: all 0.7s;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.button-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+.hover-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+.lyrics {
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Hide scrollbar for all browsers */
+.lyrics {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+}
+
+.lyrics::-webkit-scrollbar {
+    display: none;
+}
+
+.bold-text {
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    transition: font-weight 0.3s ease;
+}
+
+.bold-text:hover {
+    color:rgb(174, 0, 255);
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
+/*1*/
+.image-overlay.i {
+    position: fixed;
+    bottom: 20%;
+    left: 0; /* Adjusted from left to right */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.i {
+    transform: translateY(0) translateX(0); /* Adjusted to translate from both top and right */
+    opacity: 1;
+    visibility: visible;
+}
+
+/*2*/
+.image-overlay.love {
+    position: fixed;
+    top: 0; /* Start from the top outside of the screen */
+    left: 50%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.love {
+    transform: translate(-50%, 0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*3*/
+.image-overlay.thinking {
+    position: fixed;
+    top: 20%;
+    right: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.thinking {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/*4*/
+.image-overlay.bout {
+    position: fixed;
+    bottom: -100%;
+    left: 30%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.bout {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*5*/
+.image-overlay.you {
+    position: fixed;
+    bottom: 60%;
+    left: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.you {
+    transform: translateY(0) translateX(0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*6*/
+.image-overlay.but {
+    position: fixed;
+    top: 0; 
+    left: 50%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.but {
+    transform: translate(-50%, 0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*7*/
+.image-overlay.not {
+    position: fixed;
+    top: 20%;
+    right: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%); 
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.not {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/*8*/
+.image-overlay.every {
+    position: fixed;
+    bottom: -100%;
+    left: 30%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.every {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*9*/
+.image-overlay.stays {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.stays {
+    transform: translate(-50%, 0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*10*/
+.image-overlay.like {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%); 
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.like {
+    transform: translateY(0) translateX(0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*11*/
+.image-overlay.mine {
+    position: fixed;
+    bottom: -100%;
+    left: 30%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.mine {
+    bottom: 0; 
+    opacity: 1;
+    visibility: visible;
+}
+
+/*image*/
+.image-overlay img {
+    transform: scale(2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 200px;
+}
+
+
+/* button hover effect */
+#iButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#loveButton:hover {
+    color:rgb(99, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#thinkingButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#boutButton:hover {
+    color:rgb(99, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+#youButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#butButton:hover {
+    color:rgb(99, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#notButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#everyButton:hover {
+    color:rgb(99, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+#staysButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#likeButton:hover {
+    color:rgb(99, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#mineButton:hover {
+    color:rgb(216, 168, 168);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    font-size: 30px;
+}
+
+#goBackButton {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    Font-style: normal;
+    margin-top: auto;
+    position: relative;
+}
+
+#playButton1 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton2 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton3 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton4 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton5 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton6 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton7 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton8 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton9 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton10 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playButton11 {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
