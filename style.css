@@ -12,18 +12,18 @@ body {
     align-items:center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(255, 252, 232);
+    background-color: rgb(107, 103, 92);
     cursor: pointer;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23000' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/></svg>") 12 12, auto;
 }
 
-    button, a {
+button, a {
     color: #000;
     transition: color 0.3s ease;
 }
 
 button:hover, a:hover {
-    color: #ffae00;
+    color: #ff9100;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='none'><circle cx='8' cy='8' r='6' fill='none'/></svg>") 8 8, auto;
 }
 
@@ -33,7 +33,7 @@ button {
     font-size: 20px;
     position: relative;
     background: transparent;
-    color:rgb(132, 110, 110);
+    color:rgb(0, 0, 0);
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -67,10 +67,9 @@ button {
     overflow-y: auto;
 }
 
-/* Hide scrollbar for all browsers */
 .lyrics {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .lyrics::-webkit-scrollbar {
@@ -86,18 +85,19 @@ button {
 }
 
 .bold-text:hover {
-    color:rgb(174, 0, 255);
+    color:rgb(255, 255, 255);
     font-family: "Gowun Dodum", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 24px;
+    font-size: 20px;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='none'><circle cx='8' cy='8' r='6' fill='none'/></svg>") 8 8, auto;
 }
 
 /*1*/
 .image-overlay.i {
     position: fixed;
-    bottom: 20%;
-    left: 0; /* Adjusted from left to right */
+    bottom: 50%;
+    left: 0;
     opacity: 0;
     visibility: hidden;
     transform: translateX(-100%);
@@ -105,7 +105,7 @@ button {
 }
 
 .button-container:hover .image-overlay.i {
-    transform: translateY(0) translateX(0); /* Adjusted to translate from both top and right */
+    transform: translateY(0) translateX(0);
     opacity: 1;
     visibility: visible;
 }
@@ -113,16 +113,16 @@ button {
 /*2*/
 .image-overlay.love {
     position: fixed;
-    top: 0; /* Start from the top outside of the screen */
-    left: 50%;
-    transform: translate(-50%, -100%);
+    bottom: -100%;
+    left: 70%;
+    transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .button-container:hover .image-overlay.love {
-    transform: translate(-50%, 0); 
+    bottom: 0;
     opacity: 1;
     visibility: visible;
 }
@@ -130,7 +130,7 @@ button {
 /*3*/
 .image-overlay.thinking {
     position: fixed;
-    top: 20%;
+    bottom: 50%;
     right: 0; 
     opacity: 0;
     visibility: hidden;
@@ -164,16 +164,16 @@ button {
 /*5*/
 .image-overlay.you {
     position: fixed;
-    bottom: 60%;
-    left: 0; 
+    top: 0; 
+    right: 10%;
+    transform: translate(-50%, -100%);
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-100%);
     transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .button-container:hover .image-overlay.you {
-    transform: translateY(0) translateX(0); 
+    transform: translate(-50%, 0); 
     opacity: 1;
     visibility: visible;
 }
@@ -198,16 +198,16 @@ button {
 /*7*/
 .image-overlay.not {
     position: fixed;
-    top: 20%;
-    right: 0; 
+    top: 0; 
+    left: 20%;
+    transform: translate(-50%, -100%);
     opacity: 0;
     visibility: hidden;
-    transform: translateX(100%); 
     transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .button-container:hover .image-overlay.not {
-    transform: translateY(0) translateX(0);
+    transform: translate(-50%, 0); 
     opacity: 1;
     visibility: visible;
 }
@@ -215,16 +215,16 @@ button {
 /*8*/
 .image-overlay.every {
     position: fixed;
-    bottom: -100%;
-    left: 30%;
-    transform: translateX(-50%);
+    top: 50%;
+    right: 0; 
     opacity: 0;
     visibility: hidden;
-    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .button-container:hover .image-overlay.every {
-    bottom: 0;
+    transform: translateY(0) translateX(0);
     opacity: 1;
     visibility: visible;
 }
@@ -232,40 +232,6 @@ button {
 /*9*/
 .image-overlay.stays {
     position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.button-container:hover .image-overlay.stays {
-    transform: translate(-50%, 0); 
-    opacity: 1;
-    visibility: visible;
-}
-
-/*10*/
-.image-overlay.like {
-    position: fixed;
-    top: 20%;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%); 
-    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.button-container:hover .image-overlay.like {
-    transform: translateY(0) translateX(0); 
-    opacity: 1;
-    visibility: visible;
-}
-
-/*11*/
-.image-overlay.mine {
-    position: fixed;
     bottom: -100%;
     left: 30%;
     transform: translateX(-50%);
@@ -274,8 +240,43 @@ button {
     transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
+.button-container:hover .image-overlay.stays {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*10*/
+.image-overlay.like {
+    position: fixed;
+    bottom: -100%;
+    left: 70%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.button-container:hover .image-overlay.like {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*11*/
+.image-overlay.mine {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
 .button-container:hover .image-overlay.mine {
-    bottom: 0; 
+    transform: translateY(0) translateX(0);
     opacity: 1;
     visibility: visible;
 }
@@ -290,7 +291,7 @@ button {
 
 /* button hover effect */
 #iButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(143, 143, 143);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -298,7 +299,7 @@ button {
 }
 
 #loveButton:hover {
-    color:rgb(99, 0, 0);
+    color:rgb(255, 255, 255);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -306,7 +307,7 @@ button {
 }
 
 #thinkingButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(65, 255, 208);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -314,14 +315,14 @@ button {
 }
 
 #boutButton:hover {
-    color:rgb(99, 0, 0);
+    color:rgb(255, 89, 12);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
     font-size: 30px;
 }
 #youButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(86, 235, 255);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -329,7 +330,7 @@ button {
 }
 
 #butButton:hover {
-    color:rgb(99, 0, 0);
+    color:rgb(99, 43, 43);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -337,7 +338,7 @@ button {
 }
 
 #notButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(255, 0, 0);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -345,14 +346,14 @@ button {
 }
 
 #everyButton:hover {
-    color:rgb(99, 0, 0);
+    color:rgb(152, 255, 121);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
     font-size: 30px;
 }
 #staysButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(255, 196, 196);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -360,7 +361,7 @@ button {
 }
 
 #likeButton:hover {
-    color:rgb(99, 0, 0);
+    color:rgb(255, 87, 87);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -368,7 +369,7 @@ button {
 }
 
 #mineButton:hover {
-    color:rgb(216, 168, 168);
+    color:rgb(139, 131, 255);
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
@@ -380,8 +381,10 @@ button {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     Font-style: normal;
-    margin-top: auto;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #playButton1 {
