@@ -1,4 +1,3 @@
-// Get the buttons and content elements
 var iButton = document.getElementById("iButton");
 var loveButton = document.getElementById("loveButton");
 var thinkingButton = document.getElementById("thinkingButton");
@@ -11,176 +10,19 @@ var staysButton = document.getElementById("staysButton");
 var likeButton = document.getElementById("likeButton");
 var mineButton = document.getElementById("mineButton");
 var goBackButton = document.getElementById("goBackButton");
+var title1 = document.querySelector(".title1");
+var title2 = document.querySelector(".title2");
+var title3 = document.querySelector(".title3");
+var title4 = document.querySelector(".title4");
+var title5 = document.querySelector(".title5");
+var title6 = document.querySelector(".title6");
+var title7 = document.querySelector(".title7");
+var title8 = document.querySelector(".title8");
+var title9 = document.querySelector(".title9");
+var title10 = document.querySelector(".title10");
+var title11 = document.querySelector(".title11");
 var contentDiv = document.getElementById("content");
-var player;
-var audio1 = new Audio('music/As You Wish.mp3');
-var audio2 = new Audio('music/Last.mp3');
-var audio3 = new Audio('music/Summer (Feat. BEO).mp3');
-var audio4 = new Audio('music/Star Ceiling.mp3');
-var audio5 = new Audio('music/Winter.mp3');
-var audio6 = new Audio('music/One.mp3');
-var audio7 = new Audio('music/Wraith.mp3');
-var audio8 = new Audio('music/Angel.mp3');
-var audio9 = new Audio('music/Mirror Maze.mp3');
-var audio10 = new Audio('music/Brithstone.mp3');
-var audio11 = new Audio('music/Mine.mp3');
-var isAudio1Playing = false;
 var originalContent = contentDiv.innerHTML;
-
-
-audio1.volume = 0.1;
-audio2.volume = 0.1;
-audio3.volume = 0.1;
-audio4.volume = 0.1;
-audio5.volume = 0.1;
-audio6.volume = 0.1;
-audio7.volume = 0.1;
-audio8.volume = 0.1;
-audio9.volume = 0.1;
-audio10.volume = 0.1;
-audio11.volume = 0.1;
-
-
-document.getElementById('playButton1').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio1);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio1);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton2').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio2);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio2);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton3').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio3);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio3);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton4').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio4);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio4);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton5').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio5);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio5);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton6').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio6);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio6);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton7').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio7);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio7);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton8').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio8);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio8);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton9').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio9);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio9);
-        isAudio1Playing = false;
-    }
-});
-document.getElementById('playButton10').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio10);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio10);
-        isAudio1Playing = false;
-    }
-});
-
-document.getElementById('playButton11').addEventListener('click', function () {
-    if (!isAudio1Playing) {
-        playAudio(audio11);
-        isAudio1Playing = true;
-    } else {
-        pauseAudio(audio11);
-        isAudio1Playing = false;
-    }
-});
-
-function playAudio(audio) {
-    audio.play();
-}
-
-function pauseAudio(audio) {
-    audio.pause();
-}
-
-function pauseAllAudio() {
-    pauseAudio(audio1);
-    pauseAudio(audio2);
-    pauseAudio(audio3);
-    pauseAudio(audio4);
-    pauseAudio(audio5);
-    pauseAudio(audio6);
-    pauseAudio(audio7);
-    pauseAudio(audio8);
-    pauseAudio(audio9);
-    pauseAudio(audio10);
-    pauseAudio(audio11);
-}
-
-function showPlayButton(buttonId) {
-    const button = document.getElementById(buttonId);
-    button.style.display = "block";
-}
-
-function hidePlayButton(buttonId) {
-    const button = document.getElementById(buttonId);
-    button.style.display = "none";
-}
 
 
 document.getElementById('iButton').addEventListener('click', function () {
@@ -235,14 +77,9 @@ document.getElementById('iButton').addEventListener('click', function () {
     아무도 우리한테 신경 쓰지 않았으니
     너마저 나한테 신경 쓰지 않았지
     </pre>`;
-    document.getElementById('playButton1').addEventListener('mouseover', function () {
-        this.title = "Title : As You Wish";
-    });
-    showPlayButton("playButton1");
 });
 
 document.getElementById('loveButton').addEventListener('click', function () {
-    
     hideButtons();
     contentDiv.innerHTML = `<pre class="lyrics">
     You act like you don't get everything you want
@@ -287,10 +124,6 @@ document.getElementById('loveButton').addEventListener('click', function () {
     Paulie blanco in the cutty yayo
     Paulie blanco in the cutty
     </pre>`;
-    document.getElementById('playButton2').addEventListener('mouseover', function () {
-        this.title = "Title : Last";
-    });
-    showPlayButton("playButton2");
 });
 
 document.getElementById('thinkingButton').addEventListener('click', function () {
@@ -374,10 +207,6 @@ document.getElementById('thinkingButton').addEventListener('click', function () 
     내가 아닌 저 사람과 새 삶을 만들어가지마
     내가 아닌 저 사람과 새 삶을 만들어가지마
     </pre>`;
-    document.getElementById('playButton3').addEventListener('mouseover', function () {
-        this.title = "Title : Summer";
-    });
-    showPlayButton("playButton3");
 });
 
 document.getElementById('boutButton').addEventListener('click', function () {
@@ -433,10 +262,6 @@ document.getElementById('boutButton').addEventListener('click', function () {
     Out here smoking big dope
     I live what I speak, oh, yeah
     </pre>`;
-    document.getElementById('playButton4').addEventListener('mouseover', function () {
-        this.title = "Title : Star Ceiling";
-    });
-    showPlayButton("playButton4");
 });
 
 document.getElementById('youButton').addEventListener('click', function () {
@@ -467,10 +292,6 @@ document.getElementById('youButton').addEventListener('click', function () {
     날 용서해
     날 용서해
     </pre>`;
-    document.getElementById('playButton5').addEventListener('mouseover', function () {
-        this.title = "Title : Winter";
-    });
-    showPlayButton("playButton5");
 });
 
 document.getElementById('butButton').addEventListener('click', function () {
@@ -516,10 +337,6 @@ document.getElementById('butButton').addEventListener('click', function () {
     Cuz 내 생각엔 you're the one you're the one for me
     내 생각엔 you're the one
     </pre>`;
-    document.getElementById('playButton6').addEventListener('mouseover', function () {
-        this.title = "Title : One";
-    });
-    showPlayButton("playButton6");
 });
 
 document.getElementById('notButton').addEventListener('click', function () {
@@ -563,10 +380,6 @@ document.getElementById('notButton').addEventListener('click', function () {
     Ride with us
     Oh-oh, yeah, oh-oh, yeah, oh-oh, yeah
     </pre>`;
-    document.getElementById('playButton7').addEventListener('mouseover', function () {
-        this.title = "Title : Wraith";
-    });
-    showPlayButton("playButton7");
 });
 
 document.getElementById('everyButton').addEventListener('click', function () {
@@ -604,10 +417,6 @@ document.getElementById('everyButton').addEventListener('click', function () {
     내가 다시 돌아와도
     그 사람 땜에 나를 잊었다고
     </pre>`;
-    document.getElementById('playButton8').addEventListener('mouseover', function () {
-        this.title = "Title : Angel";
-    });
-    showPlayButton("playButton8");
 });
 
 document.getElementById('staysButton').addEventListener('click', function () {
@@ -647,10 +456,6 @@ document.getElementById('staysButton').addEventListener('click', function () {
     They could never see what I see
     They could never be what I be
     </pre>`;
-    document.getElementById('playButton9').addEventListener('mouseover', function () {
-        this.title = "Title : Mirror Maze";
-    });
-    showPlayButton("playButton9");
 });
 
 document.getElementById('likeButton').addEventListener('click', function () {
@@ -694,10 +499,6 @@ document.getElementById('likeButton').addEventListener('click', function () {
     너랑 같이 세고 싶어 내 지폐
     내 말은 I don't wanna be your friend
     </pre>`;
-    document.getElementById('playButton10').addEventListener('mouseover', function () {
-        this.title = "Title : Birthstone";
-    });
-    showPlayButton("playButton10");
 });
 
 document.getElementById('mineButton').addEventListener('click', function () {
@@ -750,28 +551,80 @@ document.getElementById('mineButton').addEventListener('click', function () {
     말해줘 넌 <span class="bold-text">Mine</span>
     말해줘 넌 <span class="bold-text">Mine</span> <span class="bold-text">Mine</span>
     </pre>`;
-    document.getElementById('playButton11').addEventListener('mouseover', function () {
-        this.title = "Title : mine";
-    });
-    showPlayButton("playButton11");
 });
+
+iButton.addEventListener("click", () => {
+    title1.style.display = "block";
+    title1.style.transform = "translateX(0)";
+});
+
+loveButton.addEventListener("click", () => {
+    title2.style.display = "block";
+    title2.style.transform = "translateX(0)";
+});
+
+thinkingButton.addEventListener("click", () => {
+    title3.style.display = "block";
+    title3.style.transform = "translateX(0)";
+});
+
+boutButton.addEventListener("click", () => {
+    title4.style.display = "block";
+    title4.style.transform = "translateX(0)";
+});
+
+youButton.addEventListener("click", () => {
+    title5.style.display = "block";
+    title5.style.transform = "translateX(0)";
+});
+
+butButton.addEventListener("click", () => {
+    title6.style.display = "block";
+    title6.style.transform = "translateX(0)";
+});
+
+notButton.addEventListener("click", () => {
+    title7.style.display = "block";
+    title7.style.transform = "translateX(0)";
+});
+
+everyButton.addEventListener("click", () => {
+    title8.style.display = "block";
+    title8.style.transform = "translateX(0)";
+});
+
+staysButton.addEventListener("click", () => {
+    title9.style.display = "block";
+    title9.style.transform = "translateX(0)";
+});
+
+likeButton.addEventListener("click", () => {
+    title10.style.display = "block";
+    title10.style.transform = "translateX(0)";
+});
+
+mineButton.addEventListener("click", () => {
+    title11.style.display = "block";
+    title11.style.transform = "translateX(0)";
+});
+
+
+
 
 goBackButton.addEventListener("click", function() {
     contentDiv.innerHTML = originalContent;
+    title1.style.display = "none";
+    title2.style.display = "none";
+    title3.style.display = "none";
+    title4.style.display = "none";
+    title5.style.display = "none";
+    title6.style.display = "none";
+    title7.style.display = "none";
+    title8.style.display = "none";
+    title9.style.display = "none";
+    title10.style.display = "none";
+    title11.style.display = "none";
     showButtons();
-    pauseAllAudio(); 
-    hidePlayButton("playButton1");
-    hidePlayButton("playButton2");
-    hidePlayButton("playButton3");
-    hidePlayButton("playButton4");
-    hidePlayButton("playButton5");
-    hidePlayButton("playButton6");
-    hidePlayButton("playButton7");
-    hidePlayButton("playButton8");
-    hidePlayButton("playButton9");
-    hidePlayButton("playButton10");
-    hidePlayButton("playButton11");
-    isAudio1Playing = false;
 });
 
 function hideButtons() {
